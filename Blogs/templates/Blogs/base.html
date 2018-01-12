@@ -1,0 +1,73 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Blog </title>
+</head>
+<style type="text/css">
+	header{
+		background-color: grey;
+		width: 100%;
+		height: 100px;
+	}
+	.logo{
+		padding: 10px;
+		position: relative;
+		left: 80px;
+		top: 50px;
+		font-family: sans-serif;
+	}
+	.post{
+		padding: 25px;
+		width: 50%;
+	}
+	.menu{
+		float: right;
+	}
+	.menu li{
+		display: inline;
+		position: relative;
+		right: 200px;
+		margin-left: 15px;
+		font-family: sans-serif;
+	}
+	.add{
+		padding: 10px;
+		text-decoration: none;
+		font-size: 20px;
+		position: absolute;
+		top: 20px;
+		color: black;
+		border: 1px solid black;
+		left: 850px;
+		top: 150px;
+	}
+	.add:hover{
+		color: red;
+		font-size: 22px;
+		padding: 8px;
+
+	}
+	.comment {
+    margin: 20px 0px 20px 20px;
+}
+</style>
+<body>
+	<header>
+		<div class="logo">
+			Логотип
+		</div>
+		<ul class="menu">
+			<li>Home</li>
+			<li>Blog</li>
+            <a href="{% url 'about' %}"><li>About</li></a>
+			<li>Call</li>
+            <li> {{ user }}</li>
+		</ul>
+	</header>
+	<a href="{% url 'new_post' %}" class="add">Добавить пост</a>
+	{% block content %}
+	{% endblock %}		
+</body>
+</html>

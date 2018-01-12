@@ -1,0 +1,25 @@
+{% extends "Blogs/base.html" %}
+{% block content %}
+	<div class="post">
+      <p> {{ post.published_date }}</p>
+      <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+      <h3>{{ post.author }}</h3>
+      	  {{ post.text }}
+      <a class="btn btn-default" href="{% url 'comment_add' pk=post.pk %}">Добавить комментарий</a>	  
+    </div>
+    
+{% for comment in post.comments.all %}
+	<div class="comment">
+		<div class="date">{{ comment.created }}</div>
+		<strong>{{ comment.name }}</strong>
+		<p>{{ comment.body|linebreaks }}</p>
+	</div>
+{% empty %}
+	<p>Еще не комментил никто</p>
+{% endfor %}
+<h1>New comment</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Send</button>
+    </form>    
+{% endblock %}
