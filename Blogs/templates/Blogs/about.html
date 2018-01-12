@@ -1,0 +1,28 @@
+{% extends 'Blogs/base.html' %}
+{%  load staticfiles%}
+{% block content %}
+    <head>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    </head>
+    <body style=' overflow: hidden; width: 100%; height: auto; background-color: #6DDCBD; font-style: inherit'>
+
+    <div style="width: 100%; height: auto; background-color: #6DDCBD; font-style: inherit">
+    <h1 align="center">Коротко о нас:</h1>
+    <h2 align="center">Представляем вам наш долгоиграющий блог, что сможет надолго выбить вас из калеи, заставляя читать каждый пост.</h2>
+    <h2 class="open_source" style="background-color: black; font-style: oblique; color: white">root$ python3
+        <br>
+        >>>from django.contrib.auth.models import User
+        <br>
+        >>>User.objects.all()
+        <br>
+        {{ users }}
+        <br>
+        >>>from Blogs.models import Post
+        <br>
+        >>>Post.objects.all()
+        <br>
+        {{ post_obj }}
+    </h2>
+    </div>
+    </body>
+{%  endblock %}
