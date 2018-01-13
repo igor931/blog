@@ -57,3 +57,6 @@ def about(request):
     users = User.objects.all()
     post_obj = Post.objects.all()
     return render(request, 'Blogs/about.html', locals())
+def call(request):
+
+	return render(request, 'Blogs/call.html', locals())

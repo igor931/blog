@@ -7,6 +7,6 @@ urlpatterns = [
     url(r'^post/new/$', views.new_post, name='new_post'),
     url(r'^post/(?P<pk>\d+)/comment/$', views.comment_add, name='comment_add'),
     url(r'^about$', views.about, name='about'),
-   # url(r'^contact$', views.contact, name='contact'),
+    url(r'^call$', views.call, name='call'),
 
 ]
